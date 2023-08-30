@@ -55,3 +55,19 @@ setTimeout( function () {
 	StartWriter(0);
 },1000);
 	
+// JavaScript to handle smooth scrolling
+document.addEventListener("DOMContentLoaded", function () {
+	const scrollLinks = document.querySelectorAll('a[href^="#"]');
+	
+	scrollLinks.forEach((scrollLink) => {
+	  scrollLink.addEventListener("click", (e) => {
+		e.preventDefault();
+		
+		const target = document.querySelector(scrollLink.getAttribute("href"));
+		target.scrollIntoView({
+		  behavior: "smooth",
+		});
+	  });
+	});
+  });
+  
